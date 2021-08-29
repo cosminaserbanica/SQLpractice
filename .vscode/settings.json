@@ -10,7 +10,7 @@
       "askForPassword": true,
       "driver": "MySQL",
       "name": "root",
-      "database": "mysql",
+      "database": "Mysql1",
       "username": "root"
     }
   ]
