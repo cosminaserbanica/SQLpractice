@@ -2,13 +2,14 @@ import os
 import pymysql
 
 #Get username
-username = os.getenv('C9_USER')
+username = os.getenv("DATABASE_USER")
+password = os.getenv("DATABASE_PASSWORD")
 
 #Connect to the database
 
 connection = pymysql.connect(host='localhost',
                             user=username,
-                            password='',
+                            password=password,
                             db='Chinook')
 
 try:
@@ -16,7 +17,7 @@ try:
     with connection.cursor() as cursor:
       sql = "SELECT * FROM Artist;"
       cursor.execute(sql)
-      result = cursor.fetchall
+      result = cursor.fetchall()
       print(result)
 finally:
     # Close the connection, regardless of whether the above was successful
