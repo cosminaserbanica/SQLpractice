@@ -1,4 +1,5 @@
 import os
+import datetime
 import pymysql
 
 #Get username
@@ -16,9 +17,9 @@ try:
     #Run a query
     with connection.cursor() as cursor:
       sql = "SELECT * FROM Genre;"
-      cursor.execute(sql)
-      for row in cursor:
-          print(row)
+      cursor.execute("""CREATE TABLE IF NOT EXISTS
+                    Friends(name char(20), age int, DOB datetime);""")
+
 finally:
     # Close the connection, regardless of whether the above was successful
     connection.close()
